@@ -1,0 +1,26 @@
+{
+  "name": "ogl-gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ogl": "^0.0.93",
+    "parcel": "^2.6.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.6.0",
+    "@parcel/transformer-sass": "^2.6.0",
+    "normalize-wheel": "^1.0.1",
+    "sass": "^1.58.3"
+  }
+}

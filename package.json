@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/SkyC0der/ogl-gallery.git"
+
   },
   "keywords": [],
   "author": "",

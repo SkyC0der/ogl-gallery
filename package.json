@@ -10,7 +10,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SkyC0der/ogl-gallery.git"
-
   },
   "keywords": [],
   "author": "",
@@ -23,7 +22,6 @@
     "@parcel/transformer-glsl": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0",
     "normalize-wheel": "^1.0.1",
-    "parcel-bundler": "^1.12.5",
     "sass": "^1.58.3"
   }
 }

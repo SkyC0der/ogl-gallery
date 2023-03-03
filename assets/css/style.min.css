@@ -30,7 +30,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: none;
-  opacity: 0.19;
 }
 body:after {
   animation: grain 6s steps(10) infinite;
@@ -47,6 +46,9 @@ body:after {
   width: 300%;
   will-change: transform;
   z-index: 3;
+}
+.loaded body:after {
+  opacity: 0.06;
 }
 
 body #cdawrap {
@@ -66,21 +68,14 @@ img {
   display: block;
 }
 
-html {
-  font-size: 0.5208333333vw;
-}
-
 canvas {
   height: 100%;
   left: 0;
-  opacity: 0;
+  opacity: 1;
   position: fixed;
   top: 0;
   transition: opacity 1s ease;
   width: 100%;
-}
-.loaded canvas {
-  opacity: 1;
 }
 
 .main {
@@ -100,11 +95,13 @@ canvas {
   height: 100%;
   justify-content: center;
   left: 0;
-  opacity: 1;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
+  background-color: rgba(12, 12, 12, 0.4745098039);
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 .title {
@@ -115,6 +112,11 @@ canvas {
   height: 295rem;
   position: relative;
   visibility: hidden;
+}
+@media (max-width: 1200px) {
+  .gallery {
+    height: 650rem;
+  }
 }
 .gallery .gallery__figure {
   position: absolute;
@@ -311,31 +313,4 @@ canvas {
   100% {
     transform: translate(20%, -5%);
   }
-}
-body {
-  font-family: "halyard-display", sans-serif;
-  font-size: 15px;
-  margin: 0;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  overscroll-behavior-y: none;
-}
-body:after {
-  animation: grain 6s steps(10) infinite;
-  background-image: url("../images/grain.png");
-  background-repeat: repeat;
-  content: "";
-  height: 300%;
-  left: -100%;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  top: -100%;
-  transition: opacity 0.4s ease;
-  width: 300%;
-  will-change: transform;
-  z-index: 3;
-}
-.loaded body:after {
-  opacity: 0.06;
 }

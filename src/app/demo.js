@@ -1,10 +1,11 @@
 import { Renderer, Camera, Transform, Plane } from 'ogl';
 import NormalizeWheel from 'normalize-wheel'
-import { lerp } from './utils/math';
-import Media from './Media';
+import { lerp } from './utils/math'
+import Media from './Media'
+
 export default class App {
     constructor() {
-        this.speed = 2
+        this.speed = 5
         this.scroll = {
             ease: 0.05,
             current: 0,
@@ -24,7 +25,6 @@ export default class App {
 
         this.update()
         this.addEventListeners()
-
     }
     createGallery() {
         this.gallery = document.querySelector('.gallery')
@@ -53,16 +53,11 @@ export default class App {
     createGeometry() {
         this.planeGeometry = new Plane(this.gl, {
             heightSegments: 10
-          })
-        console.log("works")
+        })
     }
-
-
 
     createMedias() {
         this.mediasElements = document.querySelectorAll('.gallery__figure')
-
-        console.log(this.mediasElements)
         this.medias = Array.from(this.mediasElements).map(element => {
             let media = new Media({
                 element,
@@ -76,14 +71,7 @@ export default class App {
 
             return media
         })
-        console.log("medd")
     }
-
-
-
-
-
-   
 
     onTouchDown(event) {
         this.isDown = true
@@ -112,14 +100,14 @@ export default class App {
         this.scroll.target += speed * 0.5
     }
 
-
+  
     onResize() {
         this.screen = {
             height: window.innerHeight,
             width: window.innerWidth
         }
 
-        this.renderer.setSize(this.screen.width, this.screen.height);
+        this.renderer.setSize(this.screen.width, this.screen.height)
 
         this.camera.perspective({
             aspect: this.gl.canvas.width / this.gl.canvas.height
@@ -185,6 +173,3 @@ export default class App {
         window.addEventListener('touchend', this.onTouchUp.bind(this))
     }
 }
-
-// new App()
-
